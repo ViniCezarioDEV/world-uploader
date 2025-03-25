@@ -10,16 +10,19 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.http import MediaFileUpload
 from colorama import Fore, init, Style
-
 init(autoreset=True)  # Colorama auto-reset
 
+WORLD_NAME = "MINECRAFT_WORLD_FOLDER_NAME"
+DRIVE_FOLDER = "YOUR_DRIVE_FOLDER_ID"
+
+
 # Configurações
-DRIVE_FOLDER = "1QGyK3cJAaQUejn9PyQPiUvdLdKEVaU6Y"
+
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 # Caminhos
 MINECRAFT_SAVES = os.path.join(os.getenv("APPDATA"), ".minecraft", "saves")
-WORLD_NAME = "The_Typical_Solution"
+
 BACKUP_NAME = f"{WORLD_NAME}_Backup_{date.today().strftime('%d-%m-%Y')}"
 WORLD_PATH = os.path.join(MINECRAFT_SAVES, WORLD_NAME)
 BACKUP_ZIP = os.path.join(MINECRAFT_SAVES, f"{BACKUP_NAME}.zip")
